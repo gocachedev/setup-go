@@ -1,3 +1,7 @@
+> [!NOTE]
+> This is a fork of [actions/setup-go](http://github.com/actions/setup-go) which installs a Go toolchain built with `GOEXPERIMENT=gocacheprog` enabled.
+> This fork will become unnecessary after https://github.com/golang/go/issues/64876 is fixed and released.
+
 # setup-go
 
 [![Basic validation](https://github.com/actions/setup-go/actions/workflows/basic-validation.yml/badge.svg)](https://github.com/actions/setup-go/actions/workflows/basic-validation.yml)
@@ -193,8 +197,8 @@ steps:
 
 The `go-version-file` input accepts a path to a `go.mod` file or a `go.work` file that contains the version of Go to be used by a project.
 
-The `go` directive in `go.mod` can specify a patch version or omit it altogether (e.g., `go 1.22.0` or `go 1.22`).  
-If a patch version is specified, that specific patch version will be used.  
+The `go` directive in `go.mod` can specify a patch version or omit it altogether (e.g., `go 1.22.0` or `go 1.22`).
+If a patch version is specified, that specific patch version will be used.
 If no patch version is specified, it will search for the latest available patch version in the cache,
 [versions-manifest.json](https://github.com/actions/go-versions/blob/main/versions-manifest.json), and the
 [official Go language website](https://golang.org/dl/?mode=json&include=all), in that order.
